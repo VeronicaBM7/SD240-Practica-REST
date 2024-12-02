@@ -14,9 +14,9 @@ engine = create_engine(URL_BASE_DATOS,
                             })
 
 #2.- Clase para crear objetos del tipo session
-Session = sessionmaker(engine)
+SessionClass = sessionmaker(engine)
 def generador_sesion():
-    SessionClass = sessionmaker(engine)
+    sesion = SessionClass()
     try:
         yield sesion
     finally:
