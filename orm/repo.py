@@ -24,7 +24,7 @@ def fotos_id(sesion:Session, id_fo:int):
 #SELECT * FROM app.fotos WHERE id_alumnos={id_al}
 def fotos_alumno(sesion:Session, id_al:int):
     print(f"SELECT * FROM app.fotos WHERE id_alumnos={id_al}")
-    return sesion.query(modelos.Foto).filter(modelos.Foto.id_alumnos == id_al).all()
+    return sesion.query(modelos.Foto).filter(modelos.Foto.id_alumno == id_al).all()
 
 #SELECT * FROM app.calificaciones
 def calificaciones_lista(sesion:Session):
@@ -78,3 +78,5 @@ def fotos_eliminar(sesion:Session, id_al:int):
         "Mensaje":"Fotos eliminadas"
         }
     return respuesta
+
+
