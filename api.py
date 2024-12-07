@@ -110,3 +110,5 @@ def calificaciones_alumno_eliminar(id:int, sesion:Session = Depends(generador_se
 def fotos_alumno_eliminar(id:int, sesion:Session = Depends(generador_sesion)):
     print(f"API Eliminando fotos de alumno por id: {id}")
     repo.fotos_eliminar(sesion, id)
+
+#Terminado

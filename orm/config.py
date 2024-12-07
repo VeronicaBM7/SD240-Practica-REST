@@ -26,3 +26,4 @@ def generador_sesion():
 BaseClass = declarative_base()
 
 
+#Terminado

@@ -30,4 +30,5 @@ class Foto(BaseClass):
     titulo = Column(String(100))
     descripcion = Column(String(100))
     ruta = Column(String(100))
-    
+
+#Terminado

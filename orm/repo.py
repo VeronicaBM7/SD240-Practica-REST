@@ -79,4 +79,5 @@ def fotos_eliminar(sesion:Session, id_al:int):
         }
     return respuesta
 
+#Terminado
 
