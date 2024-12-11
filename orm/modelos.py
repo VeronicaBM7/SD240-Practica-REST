@@ -10,6 +10,7 @@ class Alumno(BaseClass):
     edad = Column(Integer)
     domicilio = Column(String(100))
     carrera = Column(String(100))
+    trimestre = Column(String(100))
     email = Column("email", String(100))
     password = Column(String(100))
     fecha_registro = Column(DateTime(timezone=True), default=DateTime.datatime.now)
