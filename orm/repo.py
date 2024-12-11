@@ -177,11 +177,11 @@ def actualizar_alumno(sesion:Session, id_alm:int,alm_esquema:esquemas.AlumnoBase
 #PUT app.calificaciones '/calificaciones/{id}'
 # UPDATE app.calificaciones
 # SET uea=cal_esquema.uea, calificacion=cal_esquema.calificacion
-# WHERE id = id_alumno
-def actualizar_calificacion(sesion:Session, id_alm:int,cal_esquema:esquemas.CalificacionBase):
+# WHERE id = id_calificacion 
+def actualizar_calificacion(sesion:Session, id_cal:int,cal_esquema:esquemas.CalificacionBase):
     #1.-Verificar que exista el alumno
-    alm_bd = alumno_id(sesion, id_alm)
-    if alm_bd is not None:
+    calif_bd = calificaciones_id(sesion, id_cal)
+    if calif_bd is not None:
         #2.-Crear un nuevo objeto de la clase modelo Calificacion
         calif_bd = modelos.Calificacion()
         #3.-Actualizar los datos del objeto
@@ -202,10 +202,10 @@ def actualizar_calificacion(sesion:Session, id_alm:int,cal_esquema:esquemas.Cali
 # UPDATE app.fotos
 # SET titulo=foto_esquema.uea, descripcion=des_esquema.calificacion, ruta=ruta_esquema.ruta 
 # WHERE id = id_alumno
-def actualizar_foto(sesion:Session, id_alm:int,foto_esquema:esquemas.FotosBase):
+def actualizar_foto(sesion:Session, id_foto:int,foto_esquema:esquemas.FotosBase):
     #1.-Verificar que exista el alumno
-    alm_bd = alumno_id(sesion, id_alm)
-    if alm_bd is not None:
+    foto_bd = alumno_id(sesion, id_foto)
+    if foto_bd is not None:
         #2.-Crear un nuevo objeto de la clase modelo Fotos
         foto_bd = modelos.Foto()
         #3.-Llenado de datos
