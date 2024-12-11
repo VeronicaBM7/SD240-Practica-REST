@@ -24,6 +24,3 @@ def generador_sesion():
 
 #3.- Clase base para mapear
 BaseClass = declarative_base()
-
-
-#Terminado

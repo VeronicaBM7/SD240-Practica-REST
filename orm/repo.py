@@ -108,6 +108,7 @@ def guardar_calificacion(sesion:Session, id_alm:int, calif_nueva:esquemas.Califi
         #2.-Crear un nuevo objeto de la clase modelo Calificacion
         calif_bd = modelos.Calificacion()
         #3.-Llenado de datos
+        calif_bd.id_alumno = id_alm
         calif_bd.uea = calif_nueva.uea
         calif_bd.calificacion = calif_nueva.calificacion
         #4.-Insertar el nuevo objeto en la BD
@@ -129,6 +130,7 @@ def guardar_foto(sesion:Session, id_alm:int, foto_nueva:esquemas.FotosBase):
         #2.-Crear un nuevo objeto de la clase modelo Fotos
         foto_bd = modelos.Foto()
         #3.-Llenado de datos
+        foto_bd.id_alumno = id_alm
         foto_bd.titulo = foto_nueva.titulo
         foto_bd.descripcion = foto_nueva.descripcion
         foto_bd.ruta = foto_nueva.ruta

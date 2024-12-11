@@ -1,7 +1,7 @@
 # Las clases modelo mapean a las tablas
 from orm.config import BaseClass
 from sqlalchemy import Column, String, Integer, DateTime, ForeignKey, Float
-
+import datetime
 #Tabla alumnos
 class Alumno(BaseClass):
     __tablename__ = "alumnos"
@@ -13,7 +13,7 @@ class Alumno(BaseClass):
     trimestre = Column(String(100))
     email = Column("email", String(100))
     password = Column(String(100))
-    fecha_registro = Column(DateTime(timezone=True), default=DateTime.datatime.now)
+    fecha_registro = Column(DateTime(timezone=True), default=datetime.datetime.now)
 
 #Tabla calificaciones
 class Calificacion(BaseClass):
@@ -31,5 +31,3 @@ class Foto(BaseClass):
     titulo = Column(String(100))
     descripcion = Column(String(100))
     ruta = Column(String(100))
-
-#Terminado

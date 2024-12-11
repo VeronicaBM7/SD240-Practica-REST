@@ -7,6 +7,7 @@ import orm.repo as repo
 import shutil
 import os
 import uuid
+import orm.esquemas as esquemas
 
 #Servidor
 app = FastAPI()
@@ -112,8 +113,37 @@ def fotos_alumno_eliminar(id:int, sesion:Session = Depends(generador_sesion)):
     repo.fotos_eliminar(sesion, id)
 
 #post("/alumnos”)
+@app.post("/alumnos")
+def agregar_alumno(alumno:esquemas.AlumnoBase, sesion:Session = Depends(generador_sesion)):
+    print("API Agregando alumno")
+    return repo.guardar_alumno(sesion, alumno)
+
 #put("/alumnos/{id})
+@app.put("/alumnos/{id}")
+def actualizar_alumno(id: int, sesion: Session = Depends(generador_sesion)):
+    print(f"API Actualizando alumno por id: {id}")
+    return repo.actualizar_alumno(sesion, id)
+
 #post("/alumnos/{id}/calificaciones")
+@app.post("/alumnos/{id}/calificaciones")
+def agregar_calificacion(id: int, calf:esquemas.CalificacionBase, sesion: Session = Depends(generador_sesion)):
+    print(f"API Agregando calificacion de alumno por id: {id}")
+    return repo.guardar_calificacion(sesion, id, calf)
+
 #put("/calificaciones/{id}")
+@app.put("/calificaciones/{id}")
+def actualizar_calificacion(id: int, calf:esquemas.CalificacionBase, sesion: Session = Depends(generador_sesion)):
+    print(f"API Actualizando calificacion por id: {id}")
+    return repo.actualizar_calificacion(sesion, id, calf)
+
 #post("/alumnos/{id}/fotos")
+@app.post("/alumnos/{id}/fotos")
+def agregar_foto(id: int, foto:esquemas.FotosBase, sesion: Session = Depends(generador_sesion)):
+    print(f"API Agregando foto de alumno por id: {id}")
+    return repo.guardar_foto(sesion, id, foto)
+
 #put("/fotos/{id}")
+@app.put("/fotos/{id}")
+def actualizar_foto(id: int, foto:esquemas.FotosBase, sesion: Session = Depends(generador_sesion)):
+    print(f"API Actualizando foto por id: {id}")
+    return repo.actualizar_foto(sesion, id, foto)
